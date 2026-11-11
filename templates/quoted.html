@@ -1,0 +1,28 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Quote
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <div class="card shadow-sm mx-auto" style="max-width: 450px;">
+        <div class="card-body text-center p-4">
+            <h4 class="card-title mb-3">Stock Quote</h4>
+
+            <h5 class="text-muted">{{ stock["name"] }}</h5>
+
+            <p class="badge bg-secondary">
+                {{ stock["symbol"] }}
+            </p>
+
+            <h2 class="text-success fw-bold mt-3">
+                {{ stock["price"] | usd }}
+            </h2>
+
+            <p class="text-muted mb-0">Current Stock Price</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
